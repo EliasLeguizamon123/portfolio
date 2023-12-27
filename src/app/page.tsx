@@ -9,7 +9,6 @@ export default function Home() {
     let camera: any, controls: any, scene: any, renderer: any, effect: any;
     let sphere: any, plane: any;
   
-
     const render = () => {
         const timer = Date.now() - start;
 
@@ -39,8 +38,6 @@ export default function Home() {
     }
 
     const init = () => {
-        console.log('init');
-		
         camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 1000 );
         camera.position.y = 150;
         camera.position.z = 500;
@@ -48,8 +45,8 @@ export default function Home() {
         scene = new THREE.Scene();
         scene.background = new THREE.Color( 0, 0, 0 );
 
-        const pointLight1 = new THREE.PointLight( 0xffffff, 3, 0, 0 );
-        pointLight1.position.set( 200, 200, 400 );
+        const pointLight1 = new THREE.PointLight( 0xffffff, 1, 0, 0 );
+        pointLight1.position.set( 200, 200, 200 );
         scene.add( pointLight1 );
 
         const pointLight2 = new THREE.PointLight( 0xffffff, 1, 0, 0 );
@@ -60,7 +57,6 @@ export default function Home() {
         scene.add( sphere );
 
         // Plane
-
         plane = new THREE.Mesh( new THREE.PlaneGeometry( 400, 400 ), new THREE.MeshBasicMaterial( { color: 0xe0e0e0 } ) );
         plane.position.y = - 200;
         plane.rotation.x = - Math.PI / 1.8;
@@ -69,38 +65,38 @@ export default function Home() {
         renderer = new THREE.WebGLRenderer();
         renderer.setSize( window.innerWidth, window.innerHeight );
 
-        effect = new AsciiEffect( renderer, ' .:-+*=%@#', { invert: true } );
+        effect = new AsciiEffect( renderer, ' .:-+*#', { invert: true } );
         effect.setSize( window.innerWidth, window.innerHeight );
-        effect.domElement.style.color = 'white';
-        effect.domElement.style.backgroundColor = 'black';
-        // Special case: append effect.domElement, instead of renderer.domElement.
-        // AsciiEffect creates a custom domElement (a div container) where the ASCII elements are placed.
-
+        effect.domElement.style.color = '#e68665';
+        effect.domElement.style.background = 'black'; //can be linear-gradient
         document.body.appendChild( effect.domElement );
 
         controls = new TrackballControls( camera, effect.domElement );
 
         controls.noZoom = true;
 
-        //
-
         window.addEventListener( 'resize', onWindowResize );
     }
 
+    
     useEffect(() => {
         const intervalId = setInterval(() => {
             if (sphere && plane && camera && controls && scene && renderer && effect){
                 animate();
             };
-        }, 1000);
+        }, 50);
 
         return () => clearInterval(intervalId);
-	  }, [start]);
+    }, [start]);
 
     useEffect(() => {
         init();
     }, [])
     return (
-        <div id="info" className='overflow-hidden'></div>
+        <main>
+            <div className="absolute bottom-[50%] left-[20%]">
+                <h1 className={`text-xl text-primary md:text-3xl md:leading-normal`}>Elias Leguizamon</h1>
+            </div>
+        </main>
     )
 }
