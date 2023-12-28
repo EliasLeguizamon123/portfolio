@@ -102,10 +102,10 @@ export default function Home() {
     
     return (
         <main>
-            <div className="absolute bottom-[60%] left-[15%] flex flex-col justify-center space-y-4 pl-4">
+            <div className="absolute bottom-[40%] md:bottom-[45%] lg:bottom-[60%] left-0 md:left-[8%] lg:left-[15%] flex flex-col xs:text-center sm:text-left lg:text-left space-y-4 pl-4 border border-sky-200">
                 <h1 className="text-3xl font-bold tracking-tighter text-white sm:text-5xl xl:text-6xl/none">Elías Leguizamón</h1>
-                <h2 className="text-2xl font-medium text-gray-400 pl-3 pt-4">A Fullstack Developer from 🇦🇷</h2>
-                <div className="flex w-[40%] pl-3">
+                <h2 className="text-2xl font-medium text-gray-400 sm:p-0 lg:pl-3 pt-4">A Fullstack Developer from 🇦🇷</h2>
+                <div className="flex sm:w-full md:w-[70%] lg:w-[40%] sm:p-0 lg:pl-3">
                     <p className="text-lg font- text-gray-400">
                     Passionate about constantly creating and learning new things,dedicated Open Source enthusiast, and
                     committed to contribute to the community with a minimalist mindset.
