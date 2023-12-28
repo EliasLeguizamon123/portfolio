@@ -46,20 +46,22 @@ export default function Home() {
         scene.background = new THREE.Color( 0, 0, 0 );
 
         const pointLight1 = new THREE.PointLight( 0xffffff, 1, 0, 0 );
-        pointLight1.position.set( 200, 200, 200 );
+        pointLight1.position.set( 400, 200, 200 );
         scene.add( pointLight1 );
 
         const pointLight2 = new THREE.PointLight( 0xffffff, 1, 0, 0 );
-        pointLight2.position.set( - 100, - 100, - 100 );
+        pointLight2.position.set( 100, - 100, - 100 );
         scene.add( pointLight2 );
 
         sphere = new THREE.Mesh( new THREE.SphereGeometry( 200, 20, 10 ), new THREE.MeshPhongMaterial( { flatShading: false } ) );
+        sphere.position.x = 200;
         scene.add( sphere );
 
         // Plane
         plane = new THREE.Mesh( new THREE.PlaneGeometry( 400, 400 ), new THREE.MeshBasicMaterial( { color: 0xe0e0e0 } ) );
         plane.position.y = - 200;
         plane.rotation.x = - Math.PI / 1.8;
+        plane.position.x = 250;
         scene.add( plane );
 
         renderer = new THREE.WebGLRenderer();
@@ -67,13 +69,18 @@ export default function Home() {
 
         effect = new AsciiEffect( renderer, ' .:-+*#', { invert: true } );
         effect.setSize( window.innerWidth, window.innerHeight );
-        effect.domElement.style.color = '#e68665';
+        effect.domElement.style.color = 'white';
         effect.domElement.style.background = 'black'; //can be linear-gradient
         document.body.appendChild( effect.domElement );
 
         controls = new TrackballControls( camera, effect.domElement );
 
         controls.noZoom = true;
+        controls.maxPolarAngle = Math.PI / 2;
+        controls.minPolarAngle = Math.PI / 2;
+        controls.noPan = true;
+        controls.rotateSpeed = 2.0;
+        controls.staticMoving = true;
 
         window.addEventListener( 'resize', onWindowResize );
     }
@@ -92,10 +99,18 @@ export default function Home() {
     useEffect(() => {
         init();
     }, [])
+    
     return (
         <main>
-            <div className="absolute bottom-[50%] left-[20%]">
-                <h1 className={`text-xl text-primary md:text-3xl md:leading-normal`}>Elias Leguizamon</h1>
+            <div className="absolute bottom-[60%] left-[15%] flex flex-col justify-center space-y-4 pl-4">
+                <h1 className="text-3xl font-bold tracking-tighter text-white sm:text-5xl xl:text-6xl/none">Elías Leguizamón</h1>
+                <h2 className="text-2xl font-medium text-gray-400 pl-3 pt-4">A Fullstack Developer from 🇦🇷</h2>
+                <div className="flex w-[40%] pl-3">
+                    <p className="text-lg font- text-gray-400">
+                    Passionate about constantly creating and learning new things,dedicated Open Source enthusiast, and
+                    committed to contribute to the community with a minimalist mindset.
+                    </p>
+                </div>
             </div>
         </main>
     )
