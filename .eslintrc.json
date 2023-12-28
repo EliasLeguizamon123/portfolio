@@ -1,6 +1,17 @@
 {
-  "extends": "next/core-web-vitals",
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:tailwindcss/recommended",
+    "eslint:recommended"
+  ],
   "rules": {
-    "indent": ["error", 4]
-  }
+    "indent": ["error", 4],
+    "tailwindcss/enforces-shorthand": "warn",
+    "tailwindcss/no-custom-classname": "warn",
+    "tailwindcss/no-contradicting-classname": "error",
+    "tailwindcss/classnames-order": "warn"
+  },
+  "plugins": ["tailwindcss"],
+  "parser": "@typescript-eslint/parser",
+  "root": true
 }

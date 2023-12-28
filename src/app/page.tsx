@@ -90,7 +90,7 @@ export default function Home() {
         const intervalId = setInterval(() => {
             if (sphere && plane && camera && controls && scene && renderer && effect){
                 animate();
-            };
+            }
         }, 50);
 
         return () => clearInterval(intervalId);
@@ -102,11 +102,11 @@ export default function Home() {
     
     return (
         <main>
-            <div className="absolute bottom-[40%] md:bottom-[45%] lg:bottom-[60%] left-0 md:left-[8%] lg:left-[15%] flex flex-col xs:text-center sm:text-left lg:text-left space-y-4 pl-4">
+            <div className="xs:text-center absolute bottom-[40%] left-0 flex flex-col space-y-4 pl-4 sm:text-left md:bottom-[45%] md:left-[8%] lg:bottom-[60%] lg:left-[15%] lg:text-left">
                 <h1 className="text-3xl font-bold tracking-tighter text-white sm:text-5xl xl:text-6xl/none">Elías Leguizamón</h1>
-                <h2 className="text-2xl font-medium text-gray-400 sm:p-0 lg:pl-3 pt-4">A Fullstack Developer from 🇦🇷</h2>
-                <div className="flex sm:w-full md:w-[70%] lg:w-[40%] sm:p-0 lg:pl-3">
-                    <p className="text-lg font- text-gray-400">
+                <h2 className="pt-4 text-2xl font-medium text-gray-400 sm:p-0 lg:pl-3">A Fullstack Developer from 🇦🇷</h2>
+                <div className="flex sm:w-full sm:p-0 md:w-[70%] lg:w-[40%] lg:pl-3">
+                    <p className="text-lg text-gray-400">
                     Passionate about constantly creating and learning new things,dedicated Open Source enthusiast, and
                     committed to contribute to the community with a minimalist mindset.
                     </p>
