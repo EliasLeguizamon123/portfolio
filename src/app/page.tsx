@@ -14,7 +14,13 @@ export default function Home() {
 
         setStart(Date.now());
 
-        sphere.position.y = Math.abs( Math.sin( timer * 0.002 ) ) * 150;
+        if (window.innerWidth < 1024) {
+            // Para pantallas más pequeñas, centrar la esfera a una altura más baja
+            sphere.position.y = -100 + Math.abs(Math.sin(timer * 0.002)) * 150;
+        } else {
+            // Para pantallas más grandes, mantener el comportamiento original
+            sphere.position.y = Math.abs(Math.sin(timer * 0.002)) * 150;
+        }
         sphere.rotation.x = timer * 0.0004;
         sphere.rotation.z = timer * 0.0002;
 
@@ -86,12 +92,18 @@ export default function Home() {
             renderer.setSize( window.innerWidth, window.innerHeight );
             effect.setSize( window.innerWidth, window.innerHeight );
             if (window.innerWidth <= 1024){
-                sphere.position.x = 0
-                plane.position.x = -10
+                sphere.position.x = 0;
+                plane.position.x = -10;
+
+                sphere.scale.set(0.5, 0.5, 0.5);
+                plane.scale.set(0.5, 0.5, 0.5);
 
             } else {
-                sphere.position.x = 200
-                plane.position.x = 250
+                sphere.position.x = 200;
+                plane.position.x = 250;
+
+                sphere.scale.set(1, 1, 1);
+                plane.scale.set(1, 1, 1);
             }
         }
     }
