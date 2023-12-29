@@ -6,6 +6,8 @@ import { useEffect, useState } from 'react';
 
 export default function Home() {
     const [start, setStart] = useState(Date.now());
+    const [width, setWidth] = useState<number>(0);
+    const [height, setHeight] = useState<number>(0);
     let camera: any, controls: any, scene: any, renderer: any, effect: any;
     let sphere: any, plane: any;
   
@@ -15,8 +17,9 @@ export default function Home() {
         setStart(Date.now());
 
         sphere.position.y = Math.abs( Math.sin( timer * 0.002 ) ) * 150;
-        sphere.rotation.x = timer * 0.0003;
+        sphere.rotation.x = timer * 0.0004;
         sphere.rotation.z = timer * 0.0002;
+
 
         controls.update();
 
@@ -29,14 +32,6 @@ export default function Home() {
         render();
     }
 
-    const onWindowResize = () => {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-
-        renderer.setSize( window.innerWidth, window.innerHeight );
-        effect.setSize( window.innerWidth, window.innerHeight );
-    }
-
     const init = () => {
         camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 1000 );
         camera.position.y = 150;
@@ -46,14 +41,14 @@ export default function Home() {
         scene.background = new THREE.Color( 0, 0, 0 );
 
         const pointLight1 = new THREE.PointLight( 0xffffff, 1, 0, 0 );
-        pointLight1.position.set( 400, 200, 200 );
+        pointLight1.position.set( 400, 400, 600 );
         scene.add( pointLight1 );
 
         const pointLight2 = new THREE.PointLight( 0xffffff, 1, 0, 0 );
         pointLight2.position.set( 100, - 100, - 100 );
         scene.add( pointLight2 );
 
-        sphere = new THREE.Mesh( new THREE.SphereGeometry( 200, 20, 10 ), new THREE.MeshPhongMaterial( { flatShading: false } ) );
+        sphere = new THREE.Mesh( new THREE.SphereGeometry( 200, 20, 10 ), new THREE.MeshPhongMaterial( { flatShading: true } ) );
         sphere.position.x = 200;
         scene.add( sphere );
 
@@ -71,6 +66,7 @@ export default function Home() {
         effect.setSize( window.innerWidth, window.innerHeight );
         effect.domElement.style.color = 'white';
         effect.domElement.style.background = 'black'; //can be linear-gradient
+        effect.domElement.style.opacity = '0.5';
         document.body.appendChild( effect.domElement );
 
         controls = new TrackballControls( camera, effect.domElement );
@@ -82,18 +78,42 @@ export default function Home() {
         controls.rotateSpeed = 2.0;
         controls.staticMoving = true;
 
-        window.addEventListener( 'resize', onWindowResize );
+        
     }
 
+    const handleResize = () => {
+        if (sphere && plane && camera && controls && scene && renderer && effect){
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize( window.innerWidth, window.innerHeight );
+            effect.setSize( window.innerWidth, window.innerHeight );
+            if (window.innerWidth <= 1024){
+                console.log('estoy');
+                
+                sphere.position.x = 0
+                plane.position.x = -10
+            } else {
+                sphere.position.x = 200
+                plane.position.x = 250
+                
+            }
+        }
+    }
     
     useEffect(() => {
         const intervalId = setInterval(() => {
             if (sphere && plane && camera && controls && scene && renderer && effect){
                 animate();
             }
-        }, 50);
 
-        return () => clearInterval(intervalId);
+            window.addEventListener( 'resize', handleResize, false );
+        }, 100);
+
+
+
+        return () => {
+            clearInterval(intervalId);
+        }
     }, [start]);
 
     useEffect(() => {
@@ -101,11 +121,11 @@ export default function Home() {
     }, [])
     
     return (
-        <main>
-            <div className="xs:text-center absolute bottom-[40%] left-0 flex flex-col space-y-4 pl-4 sm:text-left md:bottom-[45%] md:left-[8%] lg:bottom-[60%] lg:left-[15%] lg:text-left">
+        <main >
+            <div className="xs:text-center absolute bottom-[40%] left-0 z-50 flex flex-col space-y-4 pl-4 sm:text-left md:bottom-[45%] md:left-[8%] lg:bottom-[60%] lg:left-[15%] lg:text-left">
                 <h1 className="text-3xl font-bold tracking-tighter text-white sm:text-5xl xl:text-6xl/none">Elías Leguizamón</h1>
                 <h2 className="pt-4 text-2xl font-medium text-gray-400 sm:p-0 lg:pl-3">A Fullstack Developer from 🇦🇷</h2>
-                <div className="flex sm:w-full sm:p-0 md:w-[70%] lg:w-[40%] lg:pl-3">
+                <div className="flex justify-self-stretch sm:w-full sm:p-0 md:w-[70%] lg:w-[40%] lg:pl-3">
                     <p className="text-lg text-gray-400">
                     Passionate about constantly creating and learning new things,dedicated Open Source enthusiast, and
                     committed to contribute to the community with a minimalist mindset.
