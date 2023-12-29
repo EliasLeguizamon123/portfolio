@@ -88,6 +88,7 @@ export default function Home() {
             if (window.innerWidth <= 1024){
                 sphere.position.x = 0
                 plane.position.x = -10
+
             } else {
                 sphere.position.x = 200
                 plane.position.x = 250
@@ -101,18 +102,23 @@ export default function Home() {
                 animate();
             }
 
-            window.addEventListener( 'resize', handleResize, false );
+            
         }, 100);
-
-
 
         return () => {
             clearInterval(intervalId);
+            
         }
     }, [start]);
 
     useEffect(() => {
         init();
+        handleResize();
+        window.addEventListener( 'resize', handleResize, false );
+
+        return () => {
+            window.removeEventListener( 'resize', handleResize, false );
+        }
     }, [])
     
     return (
