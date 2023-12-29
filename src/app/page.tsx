@@ -6,8 +6,6 @@ import { useEffect, useState } from 'react';
 
 export default function Home() {
     const [start, setStart] = useState(Date.now());
-    const [width, setWidth] = useState<number>(0);
-    const [height, setHeight] = useState<number>(0);
     let camera: any, controls: any, scene: any, renderer: any, effect: any;
     let sphere: any, plane: any;
   
@@ -88,14 +86,11 @@ export default function Home() {
             renderer.setSize( window.innerWidth, window.innerHeight );
             effect.setSize( window.innerWidth, window.innerHeight );
             if (window.innerWidth <= 1024){
-                console.log('estoy');
-                
                 sphere.position.x = 0
                 plane.position.x = -10
             } else {
                 sphere.position.x = 200
                 plane.position.x = 250
-                
             }
         }
     }
