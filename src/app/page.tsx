@@ -1,13 +1,15 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client';
 import * as THREE from 'three';
 import { AsciiEffect } from 'three/addons/effects/AsciiEffect.js';
 import { TrackballControls } from 'three/addons/controls/TrackballControls.js';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Home() {
     const [start, setStart] = useState(Date.now());
     let camera: any, controls: any, scene: any, renderer: any, effect: any;
     let sphere: any, plane: any;
+    const animationRef = useRef<HTMLDivElement>(null)
   
     const render = () => {
         const timer = Date.now() - start;
@@ -66,21 +68,19 @@ export default function Home() {
         renderer = new THREE.WebGLRenderer();
         renderer.setSize( window.innerWidth, window.innerHeight );
 
-        effect = new AsciiEffect( renderer, ' .:-+*#', { invert: true } );
+        effect = new AsciiEffect( renderer, ' .:-+*=%@', { invert: true } );
         effect.setSize( window.innerWidth, window.innerHeight );
-        effect.domElement.style.color = 'white';
-        effect.domElement.style.background = 'black'; //can be linear-gradient
-        effect.domElement.style.opacity = '0.5';
-        document.body.appendChild( effect.domElement );
+        // effect.domElement.style.color = 'white';
+        // effect.domElement.style.background = 'black'; //can be linear-gradient
+        // effect.domElement.style.opacity = '0.5';
+        // document.body.appendChild( effect.domElement );
+        animationRef.current?.appendChild(effect.domElement);
 
         controls = new TrackballControls( camera, effect.domElement );
 
         controls.noZoom = true;
-        controls.maxPolarAngle = Math.PI / 2;
-        controls.minPolarAngle = Math.PI / 2;
-        controls.noPan = true;
+        controls.noRotate = true;
         controls.rotateSpeed = 2.0;
-        controls.staticMoving = true;
 
         
     }
@@ -119,7 +119,6 @@ export default function Home() {
 
         return () => {
             clearInterval(intervalId);
-            
         }
     }, [start]);
 
@@ -135,13 +134,14 @@ export default function Home() {
     
     return (
         <main >
-            <div className="xs:text-center absolute bottom-[40%] left-0 z-50 flex flex-col space-y-4 pl-4 sm:text-left md:bottom-[45%] md:left-[8%] lg:bottom-[60%] lg:left-[15%] lg:text-left">
+            <div id="animation" ref={animationRef} className='h-screen w-screen bg-gunmetal text-lavender opacity-50' />
+            <div className="pl-4sm:text-left absolute bottom-[40%] left-0 z-50 flex flex-col space-y-4 text-center md:bottom-[45%] md:left-[8%] md:text-left lg:bottom-[55%] lg:left-[15%] lg:text-left">
                 <h1 className="text-3xl font-bold tracking-tighter text-white sm:text-5xl xl:text-6xl/none">Elías Leguizamón</h1>
                 <h2 className="pt-4 text-2xl font-medium text-gray-400 sm:p-0 lg:pl-3">A Fullstack Developer from 🇦🇷</h2>
                 <div className="flex justify-self-stretch sm:w-full sm:p-0 md:w-[70%] lg:w-[40%] lg:pl-3">
-                    <p className="text-lg text-gray-400">
-                    Passionate about constantly creating and learning new things,dedicated Open Source enthusiast, and
-                    committed to contribute to the community with a minimalist mindset.
+                    <p className="text-lg text-lavender">
+                            Passionate about constantly creating and learning new things, Open Source enthusiast, and
+                            committed to contribute to the community with a minimalist mindset.
                     </p>
                 </div>
             </div>
