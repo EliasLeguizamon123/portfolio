@@ -8,6 +8,10 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
     title: 'Elias Leguizamon',
     description: 'Created with love by Elias Leguizamon',
+    icons: [
+        { rel: 'icon', url: 'icon.ico' },
+        { rel: 'favicon', url: 'icon.ico' }
+    ]
 }
 
 export default function RootLayout({

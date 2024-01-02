@@ -1,3 +1,4 @@
+/* eslint-disable tailwindcss/no-contradicting-classname */
 /* eslint-disable react-hooks/exhaustive-deps */
 'use client';
 import * as THREE from 'three';
@@ -133,12 +134,16 @@ export default function Home() {
     }, [])
     
     return (
-        <main >
-            <div id="animation" ref={animationRef} className='h-screen w-screen bg-gunmetal text-lavender opacity-50' />
+        <main>
+            <div className="relative h-screen w-screen bg-slate-950 text-lavender opacity-70" id="animation" ref={animationRef}>
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]">
+                </div>
+            </div>
+            <div className=' bg-gunmetal text-lavender opacity-50' />
             <div className="pl-4sm:text-left absolute bottom-[40%] left-0 z-50 flex flex-col space-y-4 text-center md:bottom-[45%] md:left-[8%] md:text-left lg:bottom-[55%] lg:left-[15%] lg:text-left">
                 <h1 className="text-3xl font-bold tracking-tighter text-white sm:text-5xl xl:text-6xl/none">Elías Leguizamón</h1>
                 <h2 className="pt-4 text-2xl font-medium text-gray-400 sm:p-0 lg:pl-3">A Fullstack Developer from 🇦🇷</h2>
-                <div className="flex justify-self-stretch sm:w-full sm:p-0 md:w-[70%] lg:w-[40%] lg:pl-3">
+                <div className="flex justify-self-stretch sm:w-full sm:p-4 md:w-[70%] lg:w-[40%] lg:pl-3">
                     <p className="text-lg text-lavender">
                             Passionate about constantly creating and learning new things, Open Source enthusiast, and
                             committed to contribute to the community with a minimalist mindset.
