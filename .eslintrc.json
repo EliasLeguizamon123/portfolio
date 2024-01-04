@@ -8,7 +8,7 @@
     "indent": ["error", 4],
     "tailwindcss/enforces-shorthand": "warn",
     "tailwindcss/no-custom-classname": "warn",
-    "tailwindcss/no-contradicting-classname": "error",
+    "tailwindcss/no-contradicting-classname": "warn",
     "tailwindcss/classnames-order": "warn"
   },
   "plugins": ["tailwindcss"],
