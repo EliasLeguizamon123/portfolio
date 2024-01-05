@@ -3,15 +3,16 @@ import Image, { StaticImageData } from "next/image";
 export interface props {
     title: string,
     description: string,
-    image: StaticImageData | string
+    image: StaticImageData | string,
+    link: string
 }
 
 export default function Card(props: props) {
     return (
-        <a href="#" className="flex flex-col items-center rounded-lg border border-gray-200 bg-white shadow hover:bg-gray-100 md:max-w-xl md:flex-row dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-            <Image className="h-96 w-full rounded-t-lg object-cover md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src={props.image} alt="" />
-            <div className="flex flex-col justify-between p-4 leading-normal">
-                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{props.title}</h5>
+        <a href={props.link} target="_blank" className="flex flex-col items-center rounded-lg border border-gray-200 bg-gray-800 shadow hover:bg-gray-500 md:max-w-xl md:flex-row dark:border-gray-700 dark:hover:text-white">
+            <Image className="h-96 w-full rounded-t-lg object-cover md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src={props.image} alt="project image" />
+            <div className="flex flex-col justify-between p-4 text-center leading-normal md:text-left">
+                <h5 className="mb-2 text-2xl font-bold italic tracking-tight text-gray-900 dark:text-lavender">{props.title}</h5>
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{props.description}</p>
             </div>
         </a>

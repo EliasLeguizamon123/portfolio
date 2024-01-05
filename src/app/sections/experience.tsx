@@ -4,7 +4,7 @@ import TimelineItem from "../components/timelineItem";
 export default function Experience () {
     return (
         <section id="experience" data-section="experience">
-            <div className=" mx-auto h-full w-full bg-slate-950 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] pl-4 opacity-70">
+            <div className=" mx-auto h-full w-full bg-slate-950 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] p-4">
                 <ol className="relative ml-3 border-s border-gray-200">
                     <TimelineItem
                         title="Web Developer"
