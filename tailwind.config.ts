@@ -13,8 +13,8 @@ const config: Config = {
                 'pantone': "#FF5C00",
                 'gunmetal-blue': "#002633",
                 'lavender': "#DDDDE8",
-            }
-        }
+            },
+        },
     },
     plugins: [],
 }
