@@ -1,9 +1,8 @@
 /* eslint-disable tailwindcss/no-contradicting-classname */
 import Navbar from "./components/navbar";
-import Contact from "./sections/contact";
-import Experience from "./sections/experience";
-import HomeSection from "./sections/home";
-import Projects from "./sections/projects";
+import Experience from "./pages/experience";
+import HomeSection from "./pages/home";
+import Projects from "./pages/projects";
 
 
 export default function Home() {
@@ -17,7 +16,6 @@ export default function Home() {
             <HomeSection />
             <Experience />
             <Projects />
-            <Contact />
         </main>
     )
 }

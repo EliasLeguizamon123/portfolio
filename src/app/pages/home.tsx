@@ -137,7 +137,7 @@ export default function HomeSection () {
         <section id="home" data-section="home">
             <div className="relative h-screen bg-slate-950 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] text-gray-500" id="animation" ref={animationRef} />
             <div className=' bg-gunmetal text-lavender' />
-            <div className="absolute bottom-[40%] left-0 flex flex-col  space-y-4 pl-4 text-center sm:text-left md:bottom-[45%] md:left-[8%] md:text-left lg:left-[15%] lg:text-left">
+            <div className="absolute bottom-[25%] left-0 flex flex-col  space-y-4 pl-4 text-center sm:bottom-[25%] sm:text-left md:bottom-[25%] md:left-[8%] md:text-left lg:bottom-[35%] lg:left-[15%] lg:text-left xl:bottom-[45%]">
                 <h1 className="text-3xl font-bold tracking-tighter text-white sm:text-5xl xl:text-6xl/none">Elías Leguizamón</h1>
                 <h2 className="pt-4 text-2xl font-medium text-gray-400 sm:p-0 lg:pl-3">A Fullstack Developer from 🇦🇷</h2>
                 <div className="flex justify-self-stretch sm:w-full sm:p-4 md:w-[70%] lg:w-[40%] lg:pl-3">
@@ -146,11 +146,11 @@ export default function HomeSection () {
                             committed to contribute to the community with a minimalist mindset.
                     </p>
                 </div>
-                <div className="flex flex-nowrap space-x-6 pl-3 text-white ">
+                <div className="flex flex-col justify-center space-y-2 px-4 text-white sm:flex-row sm:justify-start sm:space-x-4 sm:space-y-0">
                     <LinkButton href='https://github.com/EliasLeguizamon123' name='Github'>
                         <Github width='20' height='20' color='#000' />
                     </LinkButton>
-                    <LinkButton href='https://www.linkedin.com/in/elias-leguizamon/' name='Linkedin'>
+                    <LinkButton href='https://www.linkedin.com/in/eliasleguizamon/' name='Linkedin'>
                         <Linkedin width='20' height='20' color='#000' />
                     </LinkButton>
                 </div>
