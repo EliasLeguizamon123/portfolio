@@ -10,6 +10,4 @@
 
 - [ ] Add BD
 - [ ] Make seed file
-- [ ] Add resend library
-- [ ] Add formik and yup
-- [ ] Make functional contact form
+- [ ] Add Projects table
