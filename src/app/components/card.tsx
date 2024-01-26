@@ -4,17 +4,19 @@ export interface props {
     title: string,
     description: string,
     image: StaticImageData | string,
-    link: string
+    link: string,
+    i: number
 }
 
 export default function Card(props: props) {
     return (
-        <a href={props.link} target="_blank" className="flex flex-col items-center rounded-lg border border-gray-200 bg-gray-800 shadow transition ease-in-out hover:-translate-y-1 hover:scale-105 md:max-w-xl md:flex-row dark:border-gray-700 dark:hover:text-white">
-            <Image className="h-96 w-full rounded-t-lg object-cover md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src={props.image} alt="project image" />
-            <div className="flex flex-col justify-between p-4 text-center leading-normal md:text-left">
-                <h5 className="mb-2 text-2xl font-bold italic tracking-tight text-gray-900 dark:text-lavender">{props.title}</h5>
-                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{props.description}</p>
-            </div>
-        </a>
+        <div
+            className={`group row-span-1 cursor-pointer rounded-xl border-2 border-slate-400/10 bg-local text-white ${
+                props.i === 0 || props.i === 3  || props.i === 4 ? "col-span-1 md:col-span-2" : ""
+            }`}
+        >
+            <span className="absolute z-50 hidden text-white  group-hover:flex group-hover:opacity-100">{props.i}</span>
+            <Image src={props.image} width={1} alt={props.title} height={1} className="h-full w-full rounded-xl object-cover transition-opacity duration-300 group-hover:brightness-50" />
+        </div>
     )
 }
