@@ -18,7 +18,7 @@ export default function Card(props: props) {
             <div className="absolute z-50">
                 <h2 className="hidden p-4 text-white  group-hover:flex group-hover:opacity-100">{'index: ' +props.i}</h2>
             </div>
-            <Image src={props.image} width={400} alt={props.title} height={400} className=" h-full w-full rounded-xl object-cover transition-opacity duration-300 group-hover:brightness-50 sm:brightness-100 md:brightness-50 lg:brightness-100" />
+            <Image src={props.image} width={400} alt={props.title} height={400} className=" h-full w-full rounded-xl object-cover transition-opacity duration-300 group-hover:brightness-50" />
         </div>
     )
 }
