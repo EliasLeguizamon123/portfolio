@@ -12,7 +12,7 @@ export default function Card(props: props) {
     return (
         <div
             className={`group row-span-1 cursor-pointer rounded-xl border-2 border-slate-400/10 bg-local text-white ${
-                props.i === 0 || props.i === 3 || props.i === 6 ? "col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-3" : props.i === 2 ? 'row-span-2' : ''
+                props.i === 0 || props.i === 3 || props.i === 6 ? 'row-span-2' : ''
             }`}
         >
             <div className="absolute z-50">
