@@ -1,6 +1,7 @@
-import type { Config } from 'tailwindcss'
+// import type { Config } from 'tailwindcss'
+const plugin = require('tailwindcss/plugin')
 
-const config: Config = {
+module.exports = {
     content: [
         './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
         './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -16,6 +17,10 @@ const config: Config = {
             },
         },
     },
-    plugins: [],
+    plugins: [
+        plugin(function({ addVariant } : any){
+            addVariant('hocus', ['&:hover', '&:focus'])
+            addVariant('hactive', ['&:active', '&:hover'])
+        })
+    ]
 }
-export default config
