@@ -1,43 +1,79 @@
 /* eslint-disable tailwindcss/no-contradicting-classname */
 import Card from "../components/card";
-import Logo from '../icon.ico'
+// import Logo from '../icon.ico'
 
 export default function Projects () {
     const projects = [
         {
             title: "Portfolio",
             description: "Lorem ipsum dolor mutis",
-            image: Logo,
+            image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg',
             link: "www.google.com"
         },
         {
             title: "Portfolio",
             description: "Lorem ipsum dolor mutis",
-            image: Logo,
+            image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg',
             link: "www.google.com"
         },
         {
             title: "Portfolio",
             description: "Lorem ipsum dolor mutis",
-            image: Logo,
+            image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg',
             link: "www.google.com"
         },
         {
             title: "Portfolio",
             description: "Lorem ipsum dolor mutis",
-            image: Logo,
+            image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg',
             link: "www.google.com"
         },
         {
             title: "Portfolio",
             description: "Lorem ipsum dolor mutis",
-            image: Logo,
+            image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg',
             link: "www.google.com"
         },
         {
             title: "Portfolio",
             description: "Lorem ipsum dolor mutis",
-            image: Logo,
+            image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg',
+            link: "www.google.com"
+        },
+        {
+            title: "Portfolio",
+            description: "Lorem ipsum dolor mutis",
+            image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg',
+            link: "www.google.com"
+        },
+        {
+            title: "Portfolio",
+            description: "Lorem ipsum dolor mutis",
+            image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg',
+            link: "www.google.com"
+        },
+        {
+            title: "Portfolio",
+            description: "Lorem ipsum dolor mutis",
+            image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg',
+            link: "www.google.com"
+        },
+        {
+            title: "Portfolio",
+            description: "Lorem ipsum dolor mutis",
+            image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg',
+            link: "www.google.com"
+        },
+        {
+            title: "Portfolio",
+            description: "Lorem ipsum dolor mutis",
+            image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg',
+            link: "www.google.com"
+        },
+        {
+            title: "Portfolio",
+            description: "Lorem ipsum dolor mutis",
+            image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg',
             link: "www.google.com"
         }
     ]
