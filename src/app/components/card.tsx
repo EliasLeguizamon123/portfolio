@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 export interface props {
     title: string,
     description: string,
@@ -8,7 +9,6 @@ export interface props {
 }
 
 export default function Card(props: props) {
-    console.log(props.tags)
     return (
         <div
             className={`group row-span-1 cursor-pointer rounded-xl border-2 border-slate-400/10 bg-local text-white transition duration-300 hocus:-translate-y-2.5 hocus:scale-105 ${

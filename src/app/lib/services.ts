@@ -24,7 +24,6 @@ export async function createTable() {
 export async function createNewProject(project: Project) {
     try{
         const tagsAsString = project.tags.join(',');
-        
         const createNewProject = await sql`
         INSERT INTO projects (
             id,
@@ -39,7 +38,7 @@ export async function createNewProject(project: Project) {
                 ${project.description},
                 ${project.image},
                 ${project.link},
-                ARRAY[${tagsAsString}]
+                {${tagsAsString}}
             );`
         return {createNewProject}
 
