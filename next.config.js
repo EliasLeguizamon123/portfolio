@@ -9,6 +9,7 @@ const nextConfig = {
             {
                 protocol: 'https',
                 hostname: 'github.com',
+                pathname: '/test-image/**'
             }
         ]
     },
