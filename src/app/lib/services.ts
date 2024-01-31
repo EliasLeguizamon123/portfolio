@@ -48,3 +48,18 @@ export async function createNewProject(project: Project) {
         throw Error(e.message)
     }
 }
+
+export default async function getProjects() {
+    try {
+        const projects = await sql`
+        SELECT * FROM projects;`
+
+        console.log(projects.rows)
+
+        return projects.rows
+    } catch (error: any) {
+        console.error(error.message);
+        
+        throw Error(error.message)
+    }
+}
