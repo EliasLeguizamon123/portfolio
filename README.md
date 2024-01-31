@@ -8,6 +8,6 @@
 
 ## Todo: 
 
-- [ ] Add BD
-- [ ] Make seed file
-- [ ] Add Projects table
+- [X] Add BD
+- [X] Make seed file
+- [X] Add Projects table
