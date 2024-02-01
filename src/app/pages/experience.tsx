@@ -8,7 +8,7 @@ export default function Experience () {
                 <ol className="relative ml-3 border-s border-gray-200">
                     <TimelineItem
                         title="Web Developer - Magnetic Cash"
-                        date="2022 - Present"
+                        date="2022 - PRESENT"
                         description="My main tasks were to create and maintain the different systems and web pages of the company."
                         link="https://site.magneticash.com/home/"
                     />
