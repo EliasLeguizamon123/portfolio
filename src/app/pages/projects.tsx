@@ -6,6 +6,14 @@ export default async function Projects () {
 
     const projects = await getProjects()
 
+    // createNewProject({
+    //     title: "App template using Electron + Vite + React",
+    //     description: "Easily extendable and customizable app template using Electron + Vite + React. It includes a lot of features like linter, Chakra components and more",
+    //     link: "https://github.com/EliasLeguizamon123/templater-ts-electron-vite?tab=readme-ov-file",
+    //     tags: ["Electron", "Vite", "React", "TypeScript", "ChakraUI", "ESLint"],
+    //     image: "https://github.com/EliasLeguizamon123/templater-ts-electron-vite/blob/master/wallpaper.png"
+    // })
+
 
     return (
         <section id="projects" data-section="projects">

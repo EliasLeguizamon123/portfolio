@@ -3,7 +3,6 @@ import { Project } from './projectModel';
 
 export async function createTable() {
     try {
-        console.log({url: process.env})
         const createTable = await sql`
         CREATE TABLE IF NOT EXISTS projects (
             id UUID PRIMARY KEY,
@@ -23,7 +22,6 @@ export async function createTable() {
 
 export async function createNewProject(project: Project) {
     try{
-        const tagsAsString = project.tags.join(',');
         const createNewProject = await sql`
         INSERT INTO projects (
             id,
@@ -38,13 +36,12 @@ export async function createNewProject(project: Project) {
                 ${project.description},
                 ${project.image},
                 ${project.link},
-                {${tagsAsString}}
+                ARRAY[${JSON.stringify(project.tags)}]::TEXT[]
             );`
         return {createNewProject}
 
     } catch (e: any) {
         console.error(e.message);
-        
         throw Error(e.message)
     }
 }
@@ -53,8 +50,6 @@ export default async function getProjects() {
     try {
         const projects = await sql`
         SELECT * FROM projects;`
-
-        console.log(projects.rows)
 
         return projects.rows
     } catch (error: any) {
