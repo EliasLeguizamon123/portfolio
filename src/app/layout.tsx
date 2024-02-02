@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
 import React from 'react'
+import { Geist } from './ui/fonts'
 
-const inter = Inter({ subsets: ['latin'] })
+const geist = Geist;
 
 export const metadata: Metadata = {
     title: 'Elias Leguizamon',
@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={inter.className}>
+            <body className={geist.className}>
                 {children}
             </body>
         </html>

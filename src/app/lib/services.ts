@@ -36,7 +36,7 @@ export async function createNewProject(project: Project) {
                 ${project.description},
                 ${project.image},
                 ${project.link},
-                ARRAY[${JSON.stringify(project.tags)}]::TEXT[]
+                ARRAY[${project.tags.map(tag => "'" + tag + "'").join(', ')}]::TEXT[]
             );`
         return {createNewProject}
 
