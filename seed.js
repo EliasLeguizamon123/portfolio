@@ -18,24 +18,9 @@ async function seedProjects(client) {
             );
         `;
         console.log('Table created successfully!');
-
-        // const insertedProjects = await Promise.all(
-        //     projects.map(async (project) => {
-        //         const { title, description, image, link, tags } = project;
-        //         return client.sql`
-        //             INSERT INTO projects (title, description, image, link, tags)
-        //             VALUES (${title}, ${description}, ${image}, ${link}, ${tags})
-        //             ON CONFLICT (id) DO NOTHING
-        //         `;
-        //         // return insertProject;
-        //     })
-        // )
-
-        // console.log(`Seeded ${insertedProjects.length} projects!`);
         
         return {
             createTable,
-            // projects: insertedProjects
         }
         
 

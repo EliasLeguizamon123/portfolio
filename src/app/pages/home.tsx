@@ -83,7 +83,9 @@ export default function HomeSection () {
         controls.noRotate = true;
         controls.rotateSpeed = 2.0;
 
-        
+        const canvas = animationRef.current?.querySelector('canvas');
+        const context = canvas?.getContext('2d');
+        context?.canvas.setAttribute('willReadFrequently', 'true');
     }
 
     const handleResize = () => {
