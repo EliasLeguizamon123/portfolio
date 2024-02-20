@@ -11,3 +11,5 @@
 - [X] Add BD
 - [X] Make seed file
 - [X] Add Projects table
+- [ ] Add more projects
+- [ ] Do backoffice for manage projects
