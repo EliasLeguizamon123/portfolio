@@ -1,4 +1,5 @@
 /* eslint-disable tailwindcss/no-contradicting-classname */
+import { NotepadText } from "lucide-react";
 import Card from "../components/card";
 import getProjects from "../lib/services";
 
@@ -20,6 +21,12 @@ export default async function Projects () {
     return (
         <section id="projects" data-section="projects">
             <div className="h-full bg-slate-950 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] p-4 sm:px-4 md:px-28 lg:px-40">
+                <h2 className="mb-6 flex items-center gap-x-3 px-8 text-3xl font-semibold text-black/80 dark:text-white">
+                    <NotepadText />
+                    <p>
+                        Projects
+                    </p>
+                </h2>
                 <div className="grid auto-rows-[192px] grid-cols-1 gap-4 p-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
                     {projects.map((project, i) => (
                         <Card key={project.id} i={i} link={project.link} tags={project.tags} image={project.image} title={project.title} description={project.description} />

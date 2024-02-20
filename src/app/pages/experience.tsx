@@ -1,10 +1,17 @@
 /* eslint-disable tailwindcss/no-contradicting-classname */
+import { Layers3 } from "lucide-react";
 import TimelineItem from "../components/timelineItem";
 
 export default function Experience () {
     return (
         <section id="experience" data-section="experience">
             <div className="size-full bg-slate-950 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] p-4 sm:px-4 md:px-32 lg:px-44">
+                <h2 className="mb-6 flex items-center gap-x-3 text-3xl font-semibold text-black/80 dark:text-white">
+                    <Layers3 />
+                    <p>
+                    Experience
+                    </p>
+                </h2>
                 <ol className="relative ml-3 border-s border-gray-200">
                     <TimelineItem
                         title="Web Developer - Magnetic Cash"
