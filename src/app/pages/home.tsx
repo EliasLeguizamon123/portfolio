@@ -150,10 +150,10 @@ export default function HomeSection () {
                 </div>
                 <div className="flex flex-col justify-center space-y-2 px-4 text-white sm:flex-row sm:justify-start sm:space-x-4 sm:space-y-0">
                     <LinkButton href='https://github.com/EliasLeguizamon123' name='Github'>
-                        <Github width='20' height='20' color='#000' />
+                        <Github width='20' height='20' color="#141414" />
                     </LinkButton>
                     <LinkButton href='https://www.linkedin.com/in/eliasleguizamon/' name='Linkedin'>
-                        <Linkedin width='20' height='20' color='#000' />
+                        <Linkedin width='20' height='20' color="#141414" />
                     </LinkButton>
                 </div>
             </div>

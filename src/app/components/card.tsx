@@ -2,7 +2,6 @@
 import Image from "next/image"
 import { useEffect, useState } from "react";
 import GenericTag from "./genericTag";
-import { MoveRight } from "lucide-react";
 import Github from "./icons/Github";
 export interface props {
     title: string,
@@ -43,7 +42,7 @@ export default function Card(props: props) {
                     ))}
                 </div>
             </div>
-            <p className="absolute bottom-0 z-50 p-4 text-cyan-600"><Github height={'20px'} width={'20px'} color="white" /></p>
+            <p className="absolute bottom-0 z-50 hidden p-4 group-hover:flex"><Github height={'20px'} width={'20px'} color="white" /></p>
             <Image src={props.image} priority={true} style={{objectPosition: "top"}} width={400} alt={props.title} height={700} className="size-full rounded-xl object-cover transition-opacity duration-300 group-hover:brightness-50" />
         </div>
     )
