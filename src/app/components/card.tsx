@@ -41,7 +41,7 @@ export default function Card(props: props) {
                     ))}
                 </div>
             </div>
-            <Image src={props.image} priority={true} width={400} alt={props.title} height={700} className="size-full rounded-xl object-cover transition-opacity duration-300 group-hover:brightness-50" />
+            <Image src={props.image} priority={true} style={{objectPosition: "top"}} width={400} alt={props.title} height={700} className="size-full rounded-xl object-cover transition-opacity duration-300 group-hover:brightness-50" />
         </div>
     )
 }

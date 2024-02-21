@@ -8,9 +8,10 @@ const geist = Geist;
 export const metadata: Metadata = {
     title: 'Elias Leguizamon',
     description: 'Created with love by Elias Leguizamon',
-    icons: {
-        icon: '/icon.png',
-    }
+    icons: [
+        { rel: 'icon', url: 'icon.ico' },
+        { rel: 'favicon', url: 'icon.ico' }
+    ]
 }
 
 export default function RootLayout({
