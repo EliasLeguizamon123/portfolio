@@ -58,3 +58,29 @@ export default async function getProjects() {
         throw Error(error.message)
     }
 }
+
+export async function getUserContributions(username: string) {
+    try {
+        const response = await fetch(`https://api.github.com/users/${username}/events/public`);
+
+        const contributedEvents = response.json().then((data) => {
+            // Filtrar los eventos para obtener solo los eventos de tipo 'PullRequestEvent'
+            const pullRequestEvents = data.filter((event: any) => event.type === 'PullRequestEvent');
+
+            // Mapear cada evento para obtener solo la información de 'repo'
+            let repoInfo = pullRequestEvents.map((event: any) => event.repo);
+
+            // Eliminar los repos duplicados por id
+            repoInfo = repoInfo.filter((repo: any, index: number) => {
+                const _repo = repoInfo.findIndex((r: any) => r.id === repo.id);
+                return _repo === index;
+            });
+            
+            return repoInfo;
+        });
+
+        return contributedEvents;
+    } catch (error) {
+        return error;
+    }
+}

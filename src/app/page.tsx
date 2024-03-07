@@ -1,5 +1,6 @@
 /* eslint-disable tailwindcss/no-contradicting-classname */
 import Navbar from "./components/navbar";
+import Contributions from "./pages/contributions";
 import Experience from "./pages/experience";
 import HomeSection from "./pages/home";
 import Projects from "./pages/projects";
@@ -16,6 +17,7 @@ export default function Home() {
             <HomeSection />
             <Experience />
             <Projects />
+            <Contributions />
         </main>
     )
 }
