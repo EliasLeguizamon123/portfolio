@@ -2,7 +2,7 @@
 import React, { useRef, useState } from 'react';
 import { Repository } from '../lib/repoModel';
 
-const CardSpotlight = ({ repo }: { repo: Repository }) => {
+const RepositoryCard = ({ repo }: { repo: Repository }) => {
     const divRef = useRef<HTMLDivElement>(null);
     const [isFocused, setIsFocused] = useState(false);
     const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -61,4 +61,4 @@ const CardSpotlight = ({ repo }: { repo: Repository }) => {
     );
 };
 
-export default CardSpotlight;
+export default RepositoryCard;
