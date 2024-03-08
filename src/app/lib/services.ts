@@ -63,6 +63,8 @@ export async function getUserContributions(username: string) {
     try {
         const response = await fetch(`https://api.github.com/users/${username}/events/public`);
 
+        
+
         const contributedEvents = response.json().then((data) => {
             // Filtrar los eventos para obtener solo los eventos de tipo 'PullRequestEvent'
             const pullRequestEvents = data.filter((event: any) => event.type === 'PullRequestEvent');
