@@ -10,11 +10,11 @@ export default async function Projects () {
     //Para agregar proyectos nuevos hasta tener el backoffice
 
     // createNewProject({
-    //     title: "App template using Electron + Vite + React",
-    //     description: "Easily extendable and customizable app template using Electron + Vite + React. It includes a lot of features like linter, Chakra components and more",
-    //     link: "https://github.com/EliasLeguizamon123/templater-ts-electron-vite?tab=readme-ov-file",
-    //     tags: ["Electron", "Vite", "React", "TypeScript", "ChakraUI", "ESLint"],
-    //     image: "https://github.com/EliasLeguizamon123/templater-ts-electron-vite/blob/master/wallpaper.png?raw=true"
+    //     title: "Zenith",
+    //     description: "A sleek, lightweight desktop app crafted with Electron and Astro, designed developers who wants an simple and minimalist text editor.",
+    //     link: "https://github.com/EliasLeguizamon123/Zenith-ide.git",
+    //     tags: ["Electron", "Astro", "Tailwind", "Typescript"],
+    //     image: "https://raw.githubusercontent.com/EliasLeguizamon123/Zenith-ide/main/zenith.webp?raw=true"
     // })
 
 
