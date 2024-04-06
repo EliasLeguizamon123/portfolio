@@ -40,7 +40,7 @@ const RepositoryCard = ({ repo }: { repo: Repository }) => {
             ref={divRef}
             onMouseMove={handleMouseMove}
             onFocus={handleFocus}
-            onClick={() => window.open(`https://github.com/${repo.name}`, '_blank')}
+            onClick={() => window.open(repo.url, '_blank')}
             onBlur={handleBlur}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}

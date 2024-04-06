@@ -21,7 +21,7 @@ export default async function Projects () {
     return (
         <section id="projects" data-section="projects">
             <div className="h-full bg-slate-950 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] p-4 sm:px-4 md:px-28 lg:px-40">
-                <h2 className="mb-2 flex items-center gap-x-3 px-4 text-3xl font-semibold text-black/80 dark:text-white">
+                <h2 className="mb-2 flex items-center gap-x-3 px-4 pt-12 text-3xl font-semibold text-black/80 dark:text-white">
                     <NotepadText className="animate-bounce text-cyan-700" />
                     <p>
                         Projects

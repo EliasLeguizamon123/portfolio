@@ -66,6 +66,7 @@ export async function getUserContributions(username: string) {
         
 
         const contributedEvents = response.json().then((data) => {
+            console.log(data);
             // Filtrar los eventos para obtener solo los eventos de tipo 'PullRequestEvent'
             const pullRequestEvents = data.filter((event: any) => event.type === 'PullRequestEvent');
 
