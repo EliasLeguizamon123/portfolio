@@ -25,7 +25,7 @@ export default function Contributions () {
     return (
         <section id="contributions" data-section="contributions">
             <div className="size-full bg-slate-950 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] p-4 sm:px-4 md:px-32 lg:px-44">
-                <h2 className="mb-2 flex items-center gap-x-3 pt-12 text-3xl font-semibold text-black/80 dark:text-white">
+                <h2 className="mb-6 flex items-center gap-x-3 pt-12 text-3xl font-semibold text-black/80 dark:text-white">
                     <GitPullRequest className="animate-bounce text-cyan-700" />
                     <p>
                         Contributions
