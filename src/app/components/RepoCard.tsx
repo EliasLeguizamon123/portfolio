@@ -53,9 +53,12 @@ const RepositoryCard = ({ repo }: { repo: Repository }) => {
                     background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(255,182,255,.1), transparent 40%)`,
                 }}
             />
-            <div className='size-full flex-col gap-4 pt-2 text-center'>
-                <p className='pb-12 text-xl italic text-gray-200'>{repo.name.split('/')[1]}</p>
+            <div className='size-full flex-col content-center justify-items-center gap-4 pt-2 text-center'>
                 <p className='text-gray-200'>{repo.name.split('/')[0]}</p>
+                <div className="flex items-center justify-center p-8"> {/* Agregado: Contenedor flexbox */}
+                    {repo.icon} 
+                </div>
+                <p className='text-gray-200'>{repo.tecnology}</p>
             </div>
         </div>
     );

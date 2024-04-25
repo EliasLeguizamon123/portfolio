@@ -4,6 +4,9 @@
 import { GitPullRequest } from "lucide-react";
 import { Repository } from "../lib/repoModel";
 import RepoCard from "../components/RepoCard";
+import Astro from "../components/icons/Astro";
+import Rust from "../components/icons/Rust";
+import Markdown from "../components/icons/Markdown";
 
 export default function Contributions () {
 
@@ -12,11 +15,22 @@ export default function Contributions () {
             id: 1,
             name: "Clone-Wars",
             url: "https://github.com/GorvGoyl/Clone-Wars",
+            tecnology: "Markdown",
+            icon: <Markdown width={'55'} height={'55'} color={'#FFF'} />
         },
         {
             id: 2,
             name: "la-velada-web-oficial",
             url: "https://github.com/midudev/la-velada-web-oficial",
+            tecnology: "Astro",
+            icon: <Astro width={'55'} height={'55'} color={'#FFF'} />
+        },
+        {
+            id: 3,
+            name: "OneFetch",
+            url: "https://github.com/o2sh/onefetch",
+            tecnology: "Rust",
+            icon: <Rust width={'55'} height={'55'} color={'#FFF'} />
         }
     ]
     
