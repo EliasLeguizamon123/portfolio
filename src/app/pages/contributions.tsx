@@ -31,7 +31,15 @@ export default function Contributions () {
             url: "https://github.com/o2sh/onefetch",
             tecnology: "Rust",
             icon: <Rust width={'55'} height={'55'} color={'#FFF'} />
-        }
+        },
+        {
+            id: 4,
+            name: "Gengo (言語)",
+            url: "https://github.com/spenserblack/gengo",
+            tecnology: "Rust",
+            icon: <Rust width={'55'} height={'55'} color={'#FFF'} />
+        },
+        
     ]
     
     
@@ -47,7 +55,7 @@ export default function Contributions () {
                     
                 </h2>
                 <p className="mb-6 p-4 pl-10 italic text-gray-200">Below, you&apos;ll find a selection of projects I&apos;m currently collaborating on within the open-source community.</p>
-                <div className="flex w-full flex-row gap-4">
+                <div className="flex flex-wrap gap-x-8 gap-y-6 pl-12">
                     {repos?.map((repo) => (
                         <RepoCard repo={repo} key={repo.id} />
                     ))}
