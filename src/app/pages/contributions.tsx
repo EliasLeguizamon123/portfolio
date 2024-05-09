@@ -39,7 +39,6 @@ export default function Contributions () {
             tecnology: "Rust",
             icon: <Rust width={'55'} height={'55'} color={'#FFF'} />
         },
-        
     ]
     
     
@@ -55,7 +54,7 @@ export default function Contributions () {
                     
                 </h2>
                 <p className="mb-6 p-4 pl-10 italic text-gray-200">Below, you&apos;ll find a selection of projects I&apos;m currently collaborating on within the open-source community.</p>
-                <div className="flex flex-wrap gap-x-8 gap-y-6 pl-12">
+                <div className="grid grid-cols-1 gap-8 align-center justify-items-center md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {repos?.map((repo) => (
                         <RepoCard repo={repo} key={repo.id} />
                     ))}

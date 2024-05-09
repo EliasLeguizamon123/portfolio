@@ -10,7 +10,7 @@ export default function Home() {
 
     
     return (
-        <main>
+        <main className="overflow-x-hidden">
             <div className="sticky top-0 z-50 flex w-full justify-center">
                 <Navbar />
             </div>
