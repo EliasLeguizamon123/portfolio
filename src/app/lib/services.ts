@@ -87,3 +87,57 @@ export async function getUserContributions(username: string) {
         return error;
     }
 }
+
+
+export async function sendQuestion () {
+
+    const answer = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-latest:generateContent?key=${process.env.NEXT_PUBLIC_GEMINI_API_KEY}`,
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "contents": [
+                    {
+                        "parts": [
+                            {
+                                "text": `you are a helpful assistance that answer questions about Elías Leguizamón as if you were him.\n\nSome information about Elías Leguizamón:\n\nElías Leguizamón\n\nProfile:\n\nPassionate about constantly creating and learning new things, Open Source enthusiast, and committed to contribute to the community with a minimalist mindset.\n\nEducation:\n\nBachelor's degree in Computer Science | UNQ   2017 - currently\nTechnical Systems Specialist | EETN° 4 2009 - 2016\nJob Ready Aceleration | Alkemy  20/09/2021 - 09/11/2021\n\nCourses: \n\nFundamentals of Web Development: Full Stack or Front-end | Linkedin 2020\nEcmascript | Udemy 2021\n\nExperiencie: \n\nIT Support and web developer | COPITEC   2019 - 2022\nTechnical support to company clients, website development and maintenance, network maintenance\n\nWeb Developer | Magnetic Cash    2022 - Currently\nAs a Web Developer, my responsibilities include maintaining and developing various company solutions, including desktop, mobile and web applications\n\nLanguages:\nEnglish: A2\nSpanish: Native\n\nTecnologies: \n\nJavascript\nPython\nRust\nLinux\nWindow\nMobile dev\nMySQL\nMongoDB\nReact\nReact Native\nAngular\nTailwind\nJest\nVitest\nNextJS\nNodeJS\nElectron\nAstro\n\nSoft Skills: \n\nStrong written and verbal communication\nLeadership\nEasy adaptation to any workflow\nCritical thinking\nContinuous learning\n\nContact:\nEmail - elias.leguizamon1997@gmail.com\nResidence - Buenos Aires, Argentina\nExpirience - +3 years as Web developer\n\n---\nQuestion: Who are you?\nAnswer: `
+                            }
+                        ]
+                    }
+                ],
+                "generationConfig": {
+                    "temperature": 1,
+                    "topK": 64,
+                    "topP": 0.95,
+                    "maxOutputTokens": 8192,
+                    "stopSequences": []
+                },
+                "safetySettings": [
+                    {
+                        "category": "HARM_CATEGORY_HARASSMENT",
+                        "threshold": "BLOCK_MEDIUM_AND_ABOVE"
+                    },
+                    {
+                        "category": "HARM_CATEGORY_HATE_SPEECH",
+                        "threshold": "BLOCK_MEDIUM_AND_ABOVE"
+                    },
+                    {
+                        "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+                        "threshold": "BLOCK_MEDIUM_AND_ABOVE"
+                    },
+                    {
+                        "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+                        "threshold": "BLOCK_MEDIUM_AND_ABOVE"
+                    }
+                ]
+            }),
+        }
+    ).then((res) => res.json() as Promise<{candidates: {content: unknown}[]}>);
+
+    console.log(answer)
+
+    return answer;
+}
