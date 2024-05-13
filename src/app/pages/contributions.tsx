@@ -4,6 +4,9 @@
 import { GitPullRequest } from "lucide-react";
 import { Repository } from "../lib/repoModel";
 import RepoCard from "../components/RepoCard";
+import Astro from "../components/icons/Astro";
+import Rust from "../components/icons/Rust";
+import Markdown from "../components/icons/Markdown";
 
 export default function Contributions () {
 
@@ -12,12 +15,30 @@ export default function Contributions () {
             id: 1,
             name: "Clone-Wars",
             url: "https://github.com/GorvGoyl/Clone-Wars",
+            tecnology: "Markdown",
+            icon: <Markdown width={'55'} height={'55'} color={'#FFF'} />
         },
         {
             id: 2,
             name: "la-velada-web-oficial",
             url: "https://github.com/midudev/la-velada-web-oficial",
-        }
+            tecnology: "Astro",
+            icon: <Astro width={'55'} height={'55'} color={'#FFF'} />
+        },
+        {
+            id: 3,
+            name: "OneFetch",
+            url: "https://github.com/o2sh/onefetch",
+            tecnology: "Rust",
+            icon: <Rust width={'55'} height={'55'} color={'#FFF'} />
+        },
+        {
+            id: 4,
+            name: "Gengo (言語)",
+            url: "https://github.com/spenserblack/gengo",
+            tecnology: "Rust",
+            icon: <Rust width={'55'} height={'55'} color={'#FFF'} />
+        },
     ]
     
     
@@ -33,7 +54,7 @@ export default function Contributions () {
                     
                 </h2>
                 <p className="mb-6 p-4 pl-10 italic text-gray-200">Below, you&apos;ll find a selection of projects I&apos;m currently collaborating on within the open-source community.</p>
-                <div className="flex w-full flex-row gap-4">
+                <div className="grid grid-cols-1 gap-8 align-center justify-items-center md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {repos?.map((repo) => (
                         <RepoCard repo={repo} key={repo.id} />
                     ))}
