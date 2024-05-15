@@ -55,7 +55,7 @@ const RepositoryCard = ({ repo }: { repo: Repository }) => {
             />
             <div className='size-full flex-col content-center justify-items-center gap-4 pt-2 text-center'>
                 <p className='text-gray-200'>{repo.name.split('/')[0]}</p>
-                <div className="flex items-center justify-center p-8"> {/* Agregado: Contenedor flexbox */}
+                <div className="flex items-center justify-center p-8"> 
                     {repo.icon} 
                 </div>
                 <p className='text-gray-200'>{repo.tecnology}</p>

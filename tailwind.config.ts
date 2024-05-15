@@ -16,6 +16,19 @@ module.exports = {
                 'lavender': "#DDDDE8",
             },
         },
+        animation: {
+            "background-shine": "background-shine 2s linear infinite"
+        },
+        keyframes: {
+            "background-shine": {
+                '0%': {
+                    "backgroundPosition": "0 0"
+                },
+                '100%': {
+                    "backgroundPosition": "-200% 0"
+                }
+            }
+        },
     },
     plugins: [
         plugin(function({ addVariant } : any){
