@@ -138,7 +138,7 @@ export default function HomeSection () {
     }, [])
     return (
         <section id="home" data-section="home">
-            <div className="relative h-screen bg-slate-950 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] text-gray-500" id="animation" ref={animationRef} />
+            <div className="relative text-gray-500" id="animation" ref={animationRef} />
             <div className=' bg-gunmetal text-lavender' />
             <div className="absolute left-0 top-[25%] flex  flex-col space-y-4 pl-4 text-center sm:bottom-[25%] sm:text-left md:bottom-[25%] md:left-[8%] md:text-left lg:bottom-[35%] lg:left-[15%] lg:text-left xl:bottom-[45%]">
                 <h1 className="text-3xl font-bold tracking-tighter text-white sm:pl-2 sm:text-5xl xl:text-6xl/none">Elías Leguizamón</h1>
