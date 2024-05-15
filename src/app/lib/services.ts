@@ -135,9 +135,8 @@ export async function sendQuestion () {
                 ]
             }),
         }
-    ).then((res) => res.json() as Promise<{candidates: {content: unknown}[]}>);
-
-    console.log(answer)
+    ).then((res) => res.json() as Promise<{candidates: {content: {parts: {text: string}[]}}[]}>)
+        .then((data) => data.candidates[0].content.parts[0].text);
 
     return answer;
 }

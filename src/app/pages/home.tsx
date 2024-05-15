@@ -9,7 +9,6 @@ import { useEffect, useRef, useState } from 'react';
 import LinkButton from '../components/linkButton';
 import Github from '../components/icons/Github';
 import Linkedin from '../components/icons/Linkedin';
-import { sendQuestion } from '../lib/services';
 
 export default function HomeSection () {
     const [start, setStart] = useState(Date.now());
@@ -128,9 +127,7 @@ export default function HomeSection () {
     }, [start]);
 
     useEffect(() => {
-        sendQuestion().then((data) => {
-            console.log(data);
-        });
+        
         init();
         handleResize();
         window.addEventListener( 'resize', handleResize, false );
