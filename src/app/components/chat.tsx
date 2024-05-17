@@ -1,6 +1,6 @@
 "use client"
-import { Forward, SendHorizontal } from "lucide-react";
-import { useState } from "react";
+import { Forward } from "lucide-react";
+// import { useState } from "react";
 
 export interface Message {
     id: string;
@@ -9,7 +9,8 @@ export interface Message {
 }
 
 export function Chat () {
-    const [messages, setMessages] = useState<Message[]>([
+    // const [messages, setMessages] = useState<Message[]>(
+    const messages: Message[] =[
         {
             id: Math.random().toString(36).substring(7),
             message: "Hello there!",
@@ -25,7 +26,7 @@ export function Chat () {
             message: "I am a bot",
             owner: "user"
         },
-    ]);
+    ];
     return (
         <>
             <article className="grid max-h-[300px] w-full gap-2 overflow-y-auto rounded-lg border border-gray-800 bg-gradient-to-r from-black to-gray-950 p-4">
