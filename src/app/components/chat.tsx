@@ -1,8 +1,7 @@
 "use client"
-import { Forward } from "lucide-react";
-import React, { useRef, useState } from "react";
+import { Dot, Forward } from "lucide-react";
+import React, { useRef, useState, useEffect } from "react";
 import { sendQuestion } from "../lib/services";
-// import { useState } from "react";
 
 export interface Message {
     id: string;
@@ -11,6 +10,7 @@ export interface Message {
 }
 
 export function Chat () {
+    const [loading, setLoading] = useState<boolean>(false);
     const [messages, setMessages] = useState<Message[]>([
         {
             id: Math.random().toString(36).substring(7),
@@ -25,6 +25,13 @@ export function Chat () {
     ]);
 
     const inputRef = useRef<HTMLInputElement>(null);
+    const messagesEndRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (messagesEndRef.current && messages.length > 2) {
+            messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [messages]);
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -41,6 +48,8 @@ export function Chat () {
         }
     
         setMessages(prevMessages => [...prevMessages, userMessage]);
+
+        setLoading(true);
     
         sendQuestion(userMessage.message).then((response) => {
 
@@ -51,18 +60,39 @@ export function Chat () {
             };
             
             setMessages(prevMessages => [...prevMessages, botMessage]);
+        }).finally(() => {
+            setLoading(false);
         });
+    };
+
+    const formatMessage = (message: string) => {
+        console.log(message)
+        message = message.replace(/\*\*(.*?)\*\*/g, '<strong><em>$1</em></strong>');
+      
+        message = message.replace(/\*(.*?)\*/g, '<strong>$1</strong>');
+      
+        return { __html: message };
     };
 
     return (
         <>
             <article className="grid max-h-[300px] w-full gap-2 overflow-y-auto rounded-lg border border-gray-800 bg-gradient-to-r from-black to-gray-950 p-4">
                 {messages.map((message) => (
-                    <div key={message.id} className={`size-fit max-w-[80%] rounded-xl ${message.owner === 'bot' ? 'bg-gray-800' : 'ml-auto bg-cyan-700'} p-3 text-gray-50`}>
-                        <p>{message.message}</p>
-                    </div>
+                    
+                    <div 
+                        key={message.id} 
+                        className={`size-fit max-w-[80%] rounded-xl ${message.owner === 'bot' ? 'bg-gray-800' : 'ml-auto bg-cyan-700'} p-3 text-gray-50`}
+                        dangerouslySetInnerHTML={formatMessage(message.message)}
+                    />
                 ))}
-            
+                {loading && (
+                    <div className="flex w-full justify-center text-white">
+                        <Dot className="animate-bounce text-white" />
+                        <Dot className="animate-bounce text-white" />
+                        <Dot className="animate-bounce text-white" />
+                    </div>
+                )}
+                <div ref={messagesEndRef} />
             </article>
             <form onSubmit={handleSubmit} className="w-full">
                 <div className='relative mt-4 flex'>
