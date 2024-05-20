@@ -44,7 +44,7 @@ const RepositoryCard = ({ repo }: { repo: Repository }) => {
             onBlur={handleBlur}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className='relative flex h-48 w-72 cursor-pointer justify-center overflow-hidden rounded-xl border border-gray-800 bg-gradient-to-r from-black to-gray-950 shadow-2xl hocus:-translate-y-2.5 hocus:scale-105 hocus:border-cyan-200'
+            className='relative flex h-48 w-full max-w-72 cursor-pointer justify-center overflow-hidden rounded-xl border border-gray-800 bg-gradient-to-r from-black to-gray-950 shadow-2xl hocus:-translate-y-2.5 hocus:scale-105 hocus:border-cyan-200'
         >
             <div
                 className='pointer-events-none absolute -inset-px opacity-0 transition duration-300 hocus:-translate-y-2.5 hocus:scale-105'
@@ -55,7 +55,7 @@ const RepositoryCard = ({ repo }: { repo: Repository }) => {
             />
             <div className='size-full flex-col content-center justify-items-center gap-4 pt-2 text-center'>
                 <p className='text-gray-200'>{repo.name.split('/')[0]}</p>
-                <div className="flex items-center justify-center p-8"> {/* Agregado: Contenedor flexbox */}
+                <div className="flex items-center justify-center p-8"> 
                     {repo.icon} 
                 </div>
                 <p className='text-gray-200'>{repo.tecnology}</p>

@@ -67,13 +67,11 @@ export async function getUserContributions(username: string) {
 
         const contributedEvents = response.json().then((data) => {
             console.log(data);
-            // Filtrar los eventos para obtener solo los eventos de tipo 'PullRequestEvent'
+            
             const pullRequestEvents = data.filter((event: any) => event.type === 'PullRequestEvent');
 
-            // Mapear cada evento para obtener solo la información de 'repo'
             let repoInfo = pullRequestEvents.map((event: any) => event.repo);
 
-            // Eliminar los repos duplicados por id
             repoInfo = repoInfo.filter((repo: any, index: number) => {
                 const _repo = repoInfo.findIndex((r: any) => r.id === repo.id);
                 return _repo === index;
@@ -89,7 +87,7 @@ export async function getUserContributions(username: string) {
 }
 
 
-export async function sendQuestion () {
+export async function sendQuestion (question: string) {
 
     const answer = await fetch(
         `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-latest:generateContent?key=${process.env.NEXT_PUBLIC_GEMINI_API_KEY}`,
@@ -103,7 +101,7 @@ export async function sendQuestion () {
                     {
                         "parts": [
                             {
-                                "text": `you are a helpful assistance that answer questions about Elías Leguizamón as if you were him.\n\nSome information about Elías Leguizamón:\n\nElías Leguizamón\n\nProfile:\n\nPassionate about constantly creating and learning new things, Open Source enthusiast, and committed to contribute to the community with a minimalist mindset.\n\nEducation:\n\nBachelor's degree in Computer Science | UNQ   2017 - currently\nTechnical Systems Specialist | EETN° 4 2009 - 2016\nJob Ready Aceleration | Alkemy  20/09/2021 - 09/11/2021\n\nCourses: \n\nFundamentals of Web Development: Full Stack or Front-end | Linkedin 2020\nEcmascript | Udemy 2021\n\nExperiencie: \n\nIT Support and web developer | COPITEC   2019 - 2022\nTechnical support to company clients, website development and maintenance, network maintenance\n\nWeb Developer | Magnetic Cash    2022 - Currently\nAs a Web Developer, my responsibilities include maintaining and developing various company solutions, including desktop, mobile and web applications\n\nLanguages:\nEnglish: A2\nSpanish: Native\n\nTecnologies: \n\nJavascript\nPython\nRust\nLinux\nWindow\nMobile dev\nMySQL\nMongoDB\nReact\nReact Native\nAngular\nTailwind\nJest\nVitest\nNextJS\nNodeJS\nElectron\nAstro\n\nSoft Skills: \n\nStrong written and verbal communication\nLeadership\nEasy adaptation to any workflow\nCritical thinking\nContinuous learning\n\nContact:\nEmail - elias.leguizamon1997@gmail.com\nResidence - Buenos Aires, Argentina\nExpirience - +3 years as Web developer\n\n---\nQuestion: Who are you?\nAnswer: `
+                                "text": `You are a helpful assistant that answers questions about Elías Leguizamón as if you were him.\nSome information about Elías Leguizamón:\n\n**Profile:**\n- Passionate about constantly creating and learning new things.\n- Open Source enthusiast.\n- Committed to contributing to the community with a minimalist mindset.\n\n**Education:**\n- Bachelor's degree in Computer Science | UNQ (2017 - currently)\n- Technical Systems Specialist | EETN° 4 (2009 - 2016)\n- Job Ready Acceleration (Fullstack Developer) | Alkemy (20/09/2021 - 09/11/2021)\n\n**Courses:**\n- Fundamentals of Web Development: Full Stack or Front-end | LinkedIn (2020)\n- Node.js esencialNode.js esencial | LinkedIn (2021)\n- ECMAScript | Udemy (2021)\n\n**Experience:**\n- IT Support and Web Developer | COPITEC (2019 - 2022)\n  - Technical support to company clients.\n  - Website development and maintenance with WordPress and PHP.\n  - API creation with ExpressJS, Pug, tested with Mocha / Chai.\n  - Network maintenance with centOS, Windows server, \n- Web Developer | Magnetic Cash (2022 - Currently)\n  - Maintaining and developing various company solutions, including desktop, mobile, and web applications, special focus on desktop solutions with ElectronJS, Vite, React, Angular.\n\n**Languages:**\n- English: A2-B1\n- Spanish: Native\n\n**Technologies:**\n- JavaScript\n- Python\n- Rust\n- Linux\n- Windows\n- Mobile Development\n- MySQL\n- MongoDB\n- React\n- React Native\n- Angular\n- Tailwind\n- Jest\n- Vitest\n- NextJS\n- NodeJS\n- Electron\n- Astro\n\n**Soft Skills:**\n- Strong written and verbal communication\n- Leadership\n- Easy adaptation to any workflow\n- Critical thinking\n- Continuous learning\n\n**Contact:**\n- Email: elias.leguizamon1997@gmail.com\n- Residence: Buenos Aires, Argentina\n\n**Experience:** +3 years as a Web Developer\n\n---\n\nQuestion: ${question} \nAnswer: `
                             }
                         ]
                     }
