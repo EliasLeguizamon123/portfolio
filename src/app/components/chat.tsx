@@ -81,7 +81,7 @@ export function Chat () {
                     
                     <div 
                         key={message.id} 
-                        className={`size-fit max-w-[80%] rounded-xl ${message.owner === 'bot' ? 'bg-gray-800' : 'ml-auto bg-cyan-700'} p-3 text-gray-50`}
+                        className={`size-fit max-w-[80%] rounded-xl ${message.owner === 'bot' ? 'rounded-bl-none bg-gray-800' : 'ml-auto rounded-br-none bg-cyan-700'} p-3 text-gray-50`}
                         dangerouslySetInnerHTML={formatMessage(message.message)}
                     />
                 ))}
