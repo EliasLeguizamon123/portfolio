@@ -66,7 +66,6 @@ export function Chat () {
     };
 
     const formatMessage = (message: string) => {
-        console.log(message)
         message = message.replace(/\*\*(.*?)\*\*/g, '<strong><em>$1</em></strong>');
       
         message = message.replace(/\*(.*?)\*/g, '<strong>$1</strong>');
@@ -76,7 +75,7 @@ export function Chat () {
 
     return (
         <>
-            <article className="grid max-h-[300px] w-full gap-2 overflow-y-auto rounded-lg border border-gray-800 bg-gradient-to-r from-black to-gray-950 p-4">
+            <article className="grid max-h-[600px] w-full gap-2 overflow-y-auto rounded-lg border border-gray-800 bg-gradient-to-r from-black to-gray-950 p-4 lg:max-h-[500px]">
                 {messages.map((message) => (
                     
                     <div 
@@ -105,7 +104,7 @@ export function Chat () {
                         id="question"
                         className='block h-12 w-[95%] rounded-md rounded-r-none  border border-gray-800 bg-gray-950 px-4 py-2 text-gray-300 focus:outline-none md:px-6'
                     />
-                    <button type="submit" className="flex h-12 w-[5%] items-center justify-center rounded-r-md border border-gray-800 bg-gradient-to-r from-black to-gray-950">
+                    <button type="submit" className="flex h-12 w-[15%] items-center justify-center rounded-r-md border border-gray-800 bg-gradient-to-r from-black to-gray-950 md:w-[10%]">
                         <Forward className="text-white" />
                     </button>
                 </div>
