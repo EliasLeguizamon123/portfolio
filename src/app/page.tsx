@@ -21,9 +21,7 @@ export default function Home() {
             <Projects />
             <Contributions />
             <About />
-            <div className="sticky bottom-0 z-50 flex w-full justify-center">
-                <Footer />
-            </div>
+            <Footer />
         </main>
     )
 }
