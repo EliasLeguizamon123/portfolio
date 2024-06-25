@@ -1,4 +1,5 @@
 /* eslint-disable tailwindcss/no-contradicting-classname */
+import Footer from "./components/footer";
 import Navbar from "./components/navbar";
 import About from "./pages/about";
 import Contributions from "./pages/contributions";
@@ -20,6 +21,7 @@ export default function Home() {
             <Projects />
             <Contributions />
             <About />
+            <Footer />
         </main>
     )
 }
