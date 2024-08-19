@@ -10,11 +10,11 @@ export default async function Projects () {
     //Para agregar proyectos nuevos hasta tener el backoffice
 
     // createNewProject({
-    //     title: "Zenith",
-    //     description: "A sleek, lightweight desktop app crafted with Electron and Astro, designed developers who wants an simple and minimalist text editor.",
-    //     link: "https://github.com/EliasLeguizamon123/Zenith-ide.git",
-    //     tags: ["Electron", "Astro", "Tailwind", "Typescript"],
-    //     image: "https://raw.githubusercontent.com/EliasLeguizamon123/Zenith-ide/main/zenith.webp?raw=true"
+    //     title: "Polychrome",
+    //     description: "A crate for printing colored and underlined text in the terminal.",
+    //     link: "https://github.com/EliasLeguizamon123/polychrome",
+    //     tags: ["Rust", "CLI", "Terminal", "Text", "Color"],
+    //     image: "https://github.com/EliasLeguizamon123/polychrome/blob/main/miniature.png?raw=true"
     // })
 
     return (

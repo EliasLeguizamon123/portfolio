@@ -29,7 +29,6 @@ export default function Experience () {
                         title="Web Development Instructor - Freelance"
                         date="2017 - 2019"
                         description="My main task is to introduce curious people to the best valued sector of the programming market today, the classes can be defined as an introduction to HTML5, CSS3 and Javascript."
-                        link="https://w3schools.com"
                     />
                 </ol>
             </div>
