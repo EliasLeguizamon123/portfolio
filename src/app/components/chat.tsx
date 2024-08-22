@@ -11,6 +11,7 @@ export interface Message {
 
 export function Chat () {
     const [loading, setLoading] = useState<boolean>(false);
+    const [inputValue, setInputValue] = useState<string>("");
     const [messages, setMessages] = useState<Message[]>([
         {
             id: Math.random().toString(36).substring(7),
@@ -35,8 +36,14 @@ export function Chat () {
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+
         
         const form = new FormData(event.currentTarget);
+
+        if (!form.get('question')) {
+            return;
+        }
+
         const userMessage: Message = {
             id: Math.random().toString(36).substring(7),
             message: form.get('question') as string,
@@ -45,6 +52,7 @@ export function Chat () {
 
         if (inputRef.current) {
             inputRef.current.value = '';
+            setInputValue("");
         }
     
         setMessages(prevMessages => [...prevMessages, userMessage]);
@@ -71,6 +79,10 @@ export function Chat () {
         message = message.replace(/\*(.*?)\*/g, '<strong>$1</strong>');
       
         return { __html: message };
+    };
+
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setInputValue(event.target.value);
     };
 
     return (
@@ -101,10 +113,15 @@ export function Chat () {
                     <input
                         ref={inputRef}
                         name="question"
+                        onChange={handleInputChange}
                         id="question"
                         className='block h-12 w-[95%] rounded-md rounded-r-none  border border-gray-800 bg-gray-950 px-4 py-2 text-gray-300 focus:outline-none md:px-6'
                     />
-                    <button type="submit" className="flex h-12 w-[15%] items-center justify-center rounded-r-md border border-gray-800 bg-gradient-to-r from-black to-gray-950 md:w-[10%]">
+                    <button 
+                        type="submit" 
+                        className={`flex h-12 w-[15%] items-center justify-center rounded-r-md border border-gray-800 bg-gradient-to-r from-black to-gray-950 md:w-[10%] ${inputValue.trim() === '' ? 'cursor-not-allowed' : '' }`}
+                        disabled={inputValue.trim() === ''}
+                    >
                         <Forward className="text-white" />
                     </button>
                 </div>
