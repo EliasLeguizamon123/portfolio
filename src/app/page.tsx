@@ -1,4 +1,5 @@
 /* eslint-disable tailwindcss/no-contradicting-classname */
+import FollowCursor from "./components/followCursor";
 import Footer from "./components/footer";
 import Navbar from "./components/navbar";
 import About from "./pages/about";
@@ -11,6 +12,7 @@ import Projects from "./pages/projects";
 export default function Home() {
     return (
         <main className="size-full select-none bg-slate-950 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]">
+            <FollowCursor color="#292F36" radius={30} lag={4} />
             <div className="sticky top-0 z-50 flex w-full justify-center">
                 <Navbar />
             </div>

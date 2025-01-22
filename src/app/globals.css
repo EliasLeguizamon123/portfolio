@@ -6,10 +6,17 @@
 body {
 	margin: 0;
 	padding: 0;
-	background: black
+	background: black;
+	cursor: none;
 }
 
 html {
 	scroll-behavior: smooth;
+	cursor: none !important;
 }
 
+*,
+*::before,
+*::after {
+  cursor: none !important;
+}
