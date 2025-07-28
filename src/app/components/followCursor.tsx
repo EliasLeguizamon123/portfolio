@@ -16,12 +16,12 @@ const FollowCursor: React.FC<FollowCursorProps> = ({
     
     useEffect(() => {
         // Ocultar el cursor al cargar el componente
-        document.body.style.cursor = 'none';
+        // document.body.style.cursor = 'none';
 
         // Limpiar al desmontar el componente
-        return () => {
-            document.body.style.cursor = '';  // Restablecer el cursor predeterminado
-        };
+        // return () => {
+        //     document.body.style.cursor = '';  // Restablecer el cursor predeterminado
+        // };
     }, []);
 
     useEffect(() => {

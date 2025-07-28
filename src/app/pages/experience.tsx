@@ -14,8 +14,14 @@ export default function Experience () {
                 </h2>
                 <ol className="relative ml-3 border-s border-gray-200">
                     <TimelineItem
+                        title="Freelance Software Engineer - AGI Systems developments"
+                        date="2024 - PRESENT"
+                        description="Developed desktop and mobile applications, including a system for interfacing with body composition scales (FastAPI, Electron, React, SQLite) and a smart home controller for spa and sauna devices using Bluetooth and Wi-Fi (React Native)."
+                        link="http://www.americangreeninc.com/"
+                    />
+                    <TimelineItem
                         title="Web Developer - Magnetic Cash"
-                        date="2022 - PRESENT"
+                        date="2022 - 2025"
                         description="My main tasks were to create and maintain the different systems and web pages of the company."
                         link="https://site.magneticash.com/home/"
                     />
