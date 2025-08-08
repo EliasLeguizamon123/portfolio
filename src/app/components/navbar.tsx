@@ -12,7 +12,7 @@ export default function Navbar() {
                 <NavbarButton href="#experience" text="Experience" hidden />
                 <NavbarButton href="#projects" text="Projects" hidden />
                 <NavbarButton href="#contributions" text="Contributions" hidden />
-                <NavbarButton href="#about" text="About" isNew/>
+                {/* <NavbarButton href="#about" text="About" isNew/> */}
             </nav>
         </header>
     )

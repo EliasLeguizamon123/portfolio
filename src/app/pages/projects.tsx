@@ -38,16 +38,7 @@ const mockProjects = [
         link: "https://github.com/EliasLeguizamon123/wortise-cms",
         tags: ["Next", "Typescript", "Better-Auth", "MongoDB Atlas", "TRPC", "TailwindCSS"],
         image: "https://raw.githubusercontent.com/EliasLeguizamon123/wortise-cms/refs/heads/main/miniature.webp",
-        size: { colSpan: 1, rowSpan: 1 }, // tamaño normal
-    },
-    {
-        id: "5",
-        title: "Py-Hornet",
-        description: "A terminal Epub reader made with Python.",
-        link: "https://github.com/EliasLeguizamon123/py-hornet",
-        tags: ["Python", "CLI", "BeautifulSoup", "Ebooklib"],
-        image: "https://raw.githubusercontent.com/EliasLeguizamon123/py-hornet/refs/heads/main/screenshots/hornetGnome.png",
-        size: { colSpan: 1, rowSpan: 1 }, // crece ancho
+        size: { colSpan: 1, rowSpan: 2 }, // tamaño normal
     },
     {
         id: "6",
