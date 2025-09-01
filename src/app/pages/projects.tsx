@@ -28,7 +28,7 @@ const mockProjects = [
         description: "A landing page for Clocky Software Development Agency",
         link: "https://www.clocky.online/en",
         tags: ["NextJS", "TailwindCSS", "Typescript", "React"],
-        image: "https://github.com/EliasLeguizamon123/RustifyEvents/blob/main/clocky.png",
+        image: "https://github.com/EliasLeguizamon123/RustifyEvents/blob/main/clocky.png?raw=true",
         size: { colSpan: 1, rowSpan: 1 },
     },
     {
