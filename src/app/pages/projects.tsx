@@ -7,11 +7,11 @@ const mockProjects = [
     {
         id: "1",
         title: "Polychrome",
-        description: "A crate for printing colored and underlined text in the terminal.",
+        description: "A modern, feature-rich terminal styling library for Rust",
         link: "https://github.com/EliasLeguizamon123/polychrome",
         tags: ["Rust", "CLI", "Terminal", "Text", "Color"],
         image: "https://github.com/EliasLeguizamon123/polychrome/blob/main/miniature.png?raw=true",
-        size: { colSpan: 2, rowSpan: 2 }, // crece ancho y alto
+        size: { colSpan: 2, rowSpan: 2 },
     },
     {
         id: "2",
@@ -20,16 +20,16 @@ const mockProjects = [
         link: "https://github.com/EliasLeguizamon123/Zenith-ide",
         tags: ["Astro", "Electron", "Typescript", "React"],
         image: "https://raw.githubusercontent.com/EliasLeguizamon123/Zenith-ide/refs/heads/main/zenith.webp",
-        size: { colSpan: 2, rowSpan: 1 }, // crece ancho
+        size: { colSpan: 2, rowSpan: 1 },
     },
     {
         id: "3",
-        title: "Rustify events",
-        description: "CLI tool for check yout Github activity in Rust.",
-        link: "https://github.com/EliasLeguizamon123/RustifyEvents",
-        tags: ["Rust", "CLI"],
-        image: "https://raw.githubusercontent.com/EliasLeguizamon123/RustifyEvents/refs/heads/main/miniature.webp",
-        size: { colSpan: 1, rowSpan: 1 }, // tamaño normal
+        title: "Clocky Software Development Agency - Landing Page",
+        description: "A landing page for Clocky Software Development Agency",
+        link: "https://www.clocky.online/en",
+        tags: ["NextJS", "TailwindCSS", "Typescript", "React"],
+        image: "https://github.com/EliasLeguizamon123/RustifyEvents/blob/main/clocky.png",
+        size: { colSpan: 1, rowSpan: 1 },
     },
     {
         id: "4",
@@ -38,7 +38,7 @@ const mockProjects = [
         link: "https://github.com/EliasLeguizamon123/wortise-cms",
         tags: ["Next", "Typescript", "Better-Auth", "MongoDB Atlas", "TRPC", "TailwindCSS"],
         image: "https://raw.githubusercontent.com/EliasLeguizamon123/wortise-cms/refs/heads/main/miniature.webp",
-        size: { colSpan: 1, rowSpan: 2 }, // tamaño normal
+        size: { colSpan: 1, rowSpan: 2 },
     },
     {
         id: "6",
