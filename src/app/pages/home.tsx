@@ -142,7 +142,7 @@ export default function HomeSection () {
             <div className=' bg-gunmetal text-lavender' />
             <div className="absolute left-0 top-[25%] flex  flex-col space-y-4 pl-4 text-center sm:bottom-[25%] sm:text-left md:bottom-[25%] md:left-[8%] md:text-left lg:bottom-[35%] lg:left-[15%] lg:text-left xl:bottom-[45%]">
                 <h1 className="text-3xl font-bold tracking-tighter text-white sm:pl-2 sm:text-5xl xl:text-6xl/none">Elías Leguizamón</h1>
-                <h2 className="pt-4 text-2xl font-medium text-cyan-600 sm:pl-4 lg:pl-3">A Fullstack Developer from  🇦🇷</h2>
+                <h2 className="pt-4 text-2xl font-medium text-cyan-600 sm:pl-4 lg:pl-3">DevOps Engineer from  🇦🇷</h2>
                 <div className="flex justify-self-stretch sm:w-full sm:p-4 md:w-[70%] lg:w-[40%] lg:pl-3">
                     <p className="text-lg text-lavender">
                             Passionate about constantly creating and learning new things, <span className='text-cyan-600'>Open Source enthusiast</span>, and
