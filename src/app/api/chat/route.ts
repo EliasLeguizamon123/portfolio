@@ -30,14 +30,14 @@ function rateLimit(ip: string): { allowed: boolean; remaining: number; reset: nu
 // Cleanup stale entries every 5 minutes
 setInterval(() => {
     const now = Date.now();
-    for (const [ip, timestamps] of rateLimitMap.entries()) {
+    rateLimitMap.forEach((timestamps, ip) => {
         const active = timestamps.filter((t) => now - t < WINDOW_MS);
         if (active.length === 0) {
             rateLimitMap.delete(ip);
         } else {
             rateLimitMap.set(ip, active);
         }
-    }
+    });
 }, 300_000);
 
 export async function POST(request: Request) {
