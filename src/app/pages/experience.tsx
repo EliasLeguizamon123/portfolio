@@ -14,27 +14,39 @@ export default function Experience () {
                 </h2>
                 <ol className="relative ml-3 border-s border-gray-200">
                     <TimelineItem
-                        title="Freelance Software Engineer - AGI Systems developments"
-                        date="2024 - PRESENT"
-                        description="Developed desktop and mobile applications, including a system for interfacing with body composition scales (FastAPI, Electron, React, SQLite) and a smart home controller for spa and sauna devices using Bluetooth and Wi-Fi (React Native)."
+                        title="Tech Lead - Giftitto"
+                        date="Mar 2026 - PRESENT"
+                        description="Led the development of modern, scalable web and mobile applications as Technical Lead. Drove architectural decisions, mentored developers, and ensured delivery of high-quality fullstack solutions across multiple platforms."
+                        link="https://partners.giftitto.com/"
+                    />
+                    <TimelineItem
+                        title="DevOps Engineer - BiometricPro"
+                        date="Sep 2025 - PRESENT"
+                        description="Architected and managed cloud infrastructure on Azure, orchestrating containerized workloads with Docker and streamlining delivery through robust CI/CD pipelines. Automated Linux server operations through scripting and implemented comprehensive monitoring for distributed systems using Prometheus and Nginx."
+                        link="https://biometricpro.io/en/home/"
+                    />
+                    <TimelineItem
+                        title="Freelance Software Engineer - AGI Systems"
+                        date="2024 - Sep 2025"
+                        description="Designed and built desktop and mobile applications, including a body composition scale interface system (FastAPI, Electron, React, SQLite) and a smart home controller for spa and sauna automation via Bluetooth and Wi-Fi (React Native)."
                         link="http://www.americangreeninc.com/"
                     />
                     <TimelineItem
                         title="Web Developer - Magnetic Cash"
                         date="2022 - 2025"
-                        description="My main tasks were to create and maintain the different systems and web pages of the company."
+                        description="Developed and maintained the company's ecosystem of web systems and digital platforms, spanning desktop, mobile, and web applications with a focus on ElectronJS, React, and Angular."
                         link="https://site.magneticash.com/home/"
                     />
                     <TimelineItem
-                        title="IT specialist - COPITEC"
+                        title="IT Specialist - COPITEC"
                         date="2019 - 2022"
-                        description="My main tasks in this position are based on doing maintenance work on the equipment, servers, website, etc. In turn, provide technical support to COPITEC enrollees to generate and renew digital signature records (SSL Security)."
+                        description="Managed IT infrastructure including server administration, hardware maintenance, and website operations. Provided technical support to members, specializing in digital signature certificate generation and renewal (SSL security)."
                         link="https://www.copitec.org.ar"
                     />
                     <TimelineItem
                         title="Web Development Instructor - Freelance"
                         date="2017 - 2019"
-                        description="My main task is to introduce curious people to the best valued sector of the programming market today, the classes can be defined as an introduction to HTML5, CSS3 and Javascript."
+                        description="Designed and delivered introductory web development courses covering HTML5, CSS3, and JavaScript, helping aspiring developers break into the tech industry."
                     />
                 </ol>
             </div>

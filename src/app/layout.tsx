@@ -6,8 +6,24 @@ import { Geist } from './ui/fonts'
 const geist = Geist;
 
 export const metadata: Metadata = {
-    title: 'Elias Leguizamon',
-    description: 'Created with love by Elias Leguizamon',
+    metadataBase: new URL('https://eliasleguizamon.dev'),
+    title: {
+        default: 'Elias Leguizamon | Software Engineer & Tech Lead',
+        template: '%s | Elias Leguizamon',
+    },
+    description: 'Software Engineer & Tech Lead with 6+ years of experience building fullstack, mobile, and DevOps solutions. Open Source enthusiast based in Buenos Aires, Argentina.',
+    keywords: ['Software Engineer', 'Tech Lead', 'Fullstack Developer', 'DevOps', 'React', 'React Native', 'Next.js', 'TypeScript', 'Rust', 'Open Source', 'Argentina'],
+    openGraph: {
+        type: 'website',
+        locale: 'es_AR',
+        title: 'Elias Leguizamon | Software Engineer & Tech Lead',
+        description: 'Software Engineer & Tech Lead with 6+ years of experience building fullstack, mobile, and DevOps solutions.',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Elias Leguizamon | Software Engineer & Tech Lead',
+        description: 'Software Engineer & Tech Lead with 6+ years of experience building fullstack, mobile, and DevOps solutions.',
+    },
 }
 
 export default function RootLayout({
@@ -16,9 +32,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
     return (
-        <html lang="en">
+        <html lang="es">
             <head>
-                {/* <link rel="icon" type="image/svg+xml" href="/icon.png" /> */}
                 <link
                     rel="icon"
                     href="/icon.svg"

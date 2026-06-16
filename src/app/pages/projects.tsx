@@ -5,72 +5,59 @@ import Card from "../components/card";
 
 const mockProjects = [
     {
+        id: "8",
+        title: "Giftitto",
+        description: "Digital gift card platform for unique experiences in Argentina — gastronomy, wellness, and more. Instant delivery with Mercado Pago integration.",
+        link: "https://giftitto.com/",
+        tags: ["React", "TypeScript", "Mercado Pago", "Node.js", "PostgreSQL"],
+        image: "/820_1x_shots_so.png",
+    },
+    {
         id: "1",
         title: "Polychrome",
         description: "A modern, feature-rich terminal styling library for Rust",
         link: "https://github.com/EliasLeguizamon123/polychrome",
         tags: ["Rust", "CLI", "Terminal", "Text", "Color"],
         image: "https://github.com/EliasLeguizamon123/polychrome/blob/main/miniature.png?raw=true",
-        size: { colSpan: 1, rowSpan: 2 },
     },
     {
         id: "2",
         title: "Zenith text editor",
-        description: "A simple text editor built with modern web technologies.",
+        description: "A modern, cross-platform text editor built with Astro, Electron, and React.",
         link: "https://github.com/EliasLeguizamon123/Zenith-ide",
         tags: ["Astro", "Electron", "Typescript", "React"],
         image: "https://raw.githubusercontent.com/EliasLeguizamon123/Zenith-ide/refs/heads/main/zenith.webp",
-        size: { colSpan: 1, rowSpan: 1 },
     },
     {
         id: "3",
         title: "Clocky Software Development Agency - Landing Page",
-        description: "A landing page for Clocky Software Development Agency",
+        description: "Modern, responsive landing page for a software development agency.",
         link: "https://www.clocky.online/en",
         tags: ["NextJS", "TailwindCSS", "Typescript", "React"],
         image: "https://github.com/EliasLeguizamon123/RustifyEvents/blob/main/clocky.png?raw=true",
-        size: { colSpan: 2, rowSpan: 2 },
-    },
-    {
-        id: "4",
-        title: "Wortise CMS",
-        description: "A content management system for managing and publishing content.",
-        link: "https://github.com/EliasLeguizamon123/wortise-cms",
-        tags: ["Next", "Typescript", "Better-Auth", "MongoDB Atlas", "TRPC", "TailwindCSS"],
-        image: "https://raw.githubusercontent.com/EliasLeguizamon123/wortise-cms/refs/heads/main/miniature.webp",
-        size: { colSpan: 1, rowSpan: 1 },
     },
     {
         id: "6",
         title: "Mobile App wallet",
-        description: "A mobile app that lets you ditch magnetic cards without losing any benefits for game houses",
+        description: "A digital wallet app that replaces physical magnetic cards for game arcades while preserving all loyalty benefits.",
         link: "https://play.google.com/store/apps/details?id=com.lepark&hl=en",
         tags: ["React Native", "Mercado Pago", "Typescript", "Javascript"],
         image: "https://raw.githubusercontent.com/EliasLeguizamon123/ll-django-basics/refs/heads/main/664_1x_shots_so.png",
-        size: { colSpan: 2, rowSpan: 1 },
     },
     {
         id: "7",
         title: "Mobile App Schedules",
-        description: "A mobile app for monitor and manage users to acces attractions in amusement parks",
+        description: "A mobile app for monitoring and managing visitor access to attractions across amusement parks.",
         link: "https://play.google.com/store/apps/details?id=com.anonymous.wrist_bands_mobile&hl=en",
         tags: ["React Native", "Mercado Pago", "Typescript", "Javascript"],
         image: "https://raw.githubusercontent.com/EliasLeguizamon123/ll-django-basics/refs/heads/main/998_1x_shots_so.png",
-        size: { colSpan: 1, rowSpan: 1 },
     },
 ];
 
-const sizeToClass = ({ colSpan, rowSpan }: {colSpan: number, rowSpan: number}) => {
-    let colClass = "";
-    let rowClass = "";
-
-    if (colSpan === 2) colClass = "md:col-span-2";
-    else if (colSpan === 3) colClass = "md:col-span-3";
-
-    if (rowSpan === 2) rowClass = "md:row-span-2";
-    else if (rowSpan === 3) rowClass = "md:row-span-3";
-
-    return `min-h-[280px] ${colClass} ${rowClass}`.trim();
+const getBentoClasses = (index: number) => {
+    if (index === 0) return "lg:col-span-2 lg:row-span-2";
+    if (index % 5 === 0 || index % 5 === 3) return "lg:col-span-2";
+    return "";
 };
 
 export default function Projects() {
@@ -84,12 +71,12 @@ export default function Projects() {
                 <p className="mb-6 p-4 pl-10 italic text-gray-200">
                     Explore a curated selection of my latest work and personal projects below
                 </p>
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-3">
-                    {mockProjects.map((project) => (
+                <div className="grid auto-rows-[280px] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+                    {mockProjects.map((project, i) => (
                         <Card
                             key={project.id}
                             project={project}
-                            className={sizeToClass(project.size)}
+                            className={`min-h-[280px] ${getBentoClasses(i)}`}
                         />
                     ))}
                 </div>
